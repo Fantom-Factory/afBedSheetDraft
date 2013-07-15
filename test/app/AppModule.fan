@@ -10,7 +10,7 @@ internal const class AppModule {
 	
 	@Contribute { serviceType=RouteMatchers# }
 	static Void contributeRouteMatchers(MappedConfig conf) {
-		conf[Route#]			= conf.autobuild(DraftRouteMatcher#)
+		conf[DraftRoute#]			= conf.autobuild(DraftRouteMatcher#)
 	}
 
 	@Contribute { serviceType=Routes# }
