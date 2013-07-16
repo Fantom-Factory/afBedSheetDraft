@@ -17,7 +17,7 @@ class Build : BuildPod {
 					"afIoc.module"	: "afBedSheet::BedSheetModule"
 				]
 
-		depends = ["sys 1.0", "draft 1.0.3",
+		depends = ["sys 1.0", "draft 1.0.3", "wisp 1.0", "web 1.0",
 					"afIoc 1.3.8+", "afBedSheet 0+"]
 		srcDirs = [`test/unit-tests/`, `test/app-tests/`, `test/app/`, `fan/`]
 		resDirs = [`doc/`]
