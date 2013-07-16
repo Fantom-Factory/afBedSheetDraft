@@ -14,7 +14,7 @@ class Build : BuildPod {
 					"license.name"	: "BSD 2-Clause License",
 					"repo.private"	: "true",
 
-					"afIoc.module"	: "afBedSheetDraft::T_AppModule"
+					"afIoc.module"	: "afBedSheetDraft::DraftModule"
 				]
 
 		depends = ["sys 1.0", "draft 1.0.3", "wisp 1.0", "web 1.0",

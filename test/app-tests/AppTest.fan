@@ -46,5 +46,5 @@ internal class AppTest : Test {
 		"http://localhost:$port".toUri + uri
 	}
 	
-	virtual Type[] iocModules() { [T_AppModule#] }
+	virtual Type[] iocModules() { [T_AppModule#, DraftModule#] }
 }
