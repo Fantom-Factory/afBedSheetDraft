@@ -1,0 +1,3 @@
+
+ - (doc) how to use .pod to auto integrate with draft.
+ 
