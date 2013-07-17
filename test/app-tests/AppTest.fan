@@ -42,8 +42,9 @@ internal class AppTest : Test {
 		}
 		throw Err("$errType not thrown")
 	}
+	
 	Uri reqUri(Uri uri) {
-		"http://localhost:$port".toUri + uri
+		`http://localhost:$port` + uri
 	}
 	
 	virtual Type[] iocModules() { [T_AppModule#, DraftModule#] }

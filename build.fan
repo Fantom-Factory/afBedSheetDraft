@@ -1,7 +1,7 @@
 using build::BuildPod
 
 class Build : BuildPod {
-	
+
 	new make() {
 		podName = "afBedSheetDraft"
 		summary = "A library for integrating draft with afBedSheet"
@@ -17,8 +17,12 @@ class Build : BuildPod {
 					"afIoc.module"	: "afBedSheetDraft::DraftModule"
 				]
 
+		index	= [	"afIoc.module"	: "afBedSheetDraft::DraftModule"
+				]
+
 		depends = ["sys 1.0", "draft 1.0.3", "wisp 1.0", "web 1.0",
 					"afIoc 1.3.8+", "afBedSheet 0+"]
+
 		srcDirs = [`test/app-tests/`, `test/app/`, `fan/`]
 		resDirs = [`doc/`]
 
