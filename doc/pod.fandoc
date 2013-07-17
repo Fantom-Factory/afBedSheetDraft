@@ -1,4 +1,53 @@
 Overview [#overview]
 ********************
-afBedSheetDraft is a library for [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` that integrates with [draft]`https://bitbucket.org/afrankvt/draft/`.
+BedSheetDraft is a library for integrating [draft]`https://bitbucket.org/afrankvt/draft/` with
+[afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview`.
+
+With BedSheetDraft you can:
+ - Use draft [Routes]`draft::Route`
+
+
+
+Configuration [#configuration]
+******************************
+Simply add 'afBedSheetDraft' and 'draft' as project dependencies in your 'build.fan'...
+
+pre>
+  depends = ["sys 1.0", "afIoc 1.3", "afBedSheet 1.0", "draft 1.0", ... ]
+<pre
+
+...and thats it!
+
+Because BedSheetDraft defines [pod meta-data]`afIoc::RegistryBuilder` for
+[afIoc]`http://repo.status302.com/doc/afIoc/#overview`, no more configuration is required.
+
+
+
+Draft Routing [#draftRouting]
+*****************************
+Draft [Routes]`draft::Route` match request URIs and call request handlers with a single map of arguments. Contribute draft
+routes the same way you would with [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` routes:
+
+pre>
+using draft::Route as DraftRoute
+
+...
+
+@Contribute { serviceType=Routes# }
+static Void contributeRoutes(OrderedConfig conf) {
+
+  conf.add(DraftRoute("/", "GET", PageHandler#index))
+  conf.add(DraftRoute("/echo/{name}/{age}", "GET", PageHandler#print))
+
+}
+<pre
+
+
+
+Release Notes [#releaseNotes]
+*****************************
+
+v1.0.0 [#v1.0.0]
+----------------
+ - New: Initial release
 

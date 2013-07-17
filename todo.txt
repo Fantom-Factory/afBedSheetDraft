@@ -1,3 +1,5 @@
 
- - (doc) how to use .pod to auto integrate with draft.
+ - upload to status302
+ - give version 1.0
+ - add flash - add filter to ensure it's in the req.stash
  
