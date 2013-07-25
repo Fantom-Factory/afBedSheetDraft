@@ -5,6 +5,7 @@ BedSheetDraft is a library for integrating [draft]`https://bitbucket.org/afrankv
 
 With BedSheetDraft you can:
  - Use draft [Routes]`draft::Route`
+ - Use draft [Flash]`draft::Flash`
 
 
 

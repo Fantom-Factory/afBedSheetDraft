@@ -8,6 +8,9 @@ internal const class T_AppModule {
 	static Void contributeRoutes(OrderedConfig conf) {
 		conf.add(DraftRoute("/", "GET", PageHandler#index))
 		conf.add(DraftRoute("/echo/{name}/{age}", "GET", PageHandler#print))
+
+		conf.add(Route(`/getFlash`, PageHandler#getFlash))
+		conf.add(Route(`/setFlash/*`, PageHandler#setFlash))
 	}
 
 }
