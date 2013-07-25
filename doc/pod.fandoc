@@ -20,7 +20,7 @@ pre>
 ...and thats it!
 
 Because BedSheetDraft defines [pod meta-data]`afIoc::RegistryBuilder` for
-[afIoc]`http://repo.status302.com/doc/afIoc/#overview`, no more configuration is required.
+[afIoc]`http://repo.status302.com/doc/afIoc/#overview`, no more configuration or setup is required.
 
 
 

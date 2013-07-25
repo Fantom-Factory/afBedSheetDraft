@@ -2,7 +2,8 @@ using afBedSheet::RouteMatcher
 using afBedSheet::RouteHandler
 using draft::Route as DraftRoute
 
-internal const class DraftRouteMatcher : RouteMatcher {
+** Maps draft 'Routes' to request handlers.
+const class DraftRouteMatcher : RouteMatcher {
 
 	override RouteHandler? match(Obj objRoute, Uri uri, Str httpMethod) {
 		route := (DraftRoute) objRoute

@@ -5,7 +5,8 @@ using afBedSheet::HttpPipelineFilter
 using draft::Flash as DraftFlash
 using web::WebReq
 
-internal const class DraftFlashFilter : HttpPipelineFilter {
+** A http filter that ensures draft 'Flash' is saved to your session at the end of a request.
+const class DraftFlashFilter : HttpPipelineFilter {
 
 	@Inject private const Registry 		registry
 

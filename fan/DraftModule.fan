@@ -9,7 +9,10 @@ using draft::Flash as DraftFlash
 using draft::Route as DraftRoute
 using web::WebReq
 
-internal const class DraftModule {
+** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module that configures 
+** [draft]`https://bitbucket.org/afrankvt/draft/` with 
+** [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview`.
+const class DraftModule {
 
 	@Build { serviceId="DraftFlash"; scope=ServiceScope.perThread }
 	static DraftFlash buildDraftFlash(WebReq webReq) {
@@ -28,8 +31,6 @@ internal const class DraftModule {
 	
 	@Contribute { serviceType=RouteMatchers# }
 	static Void contributeRouteMatchers(MappedConfig conf) {
-	// TODO: investigate why we get OpTrackerErr...?
-//		conf[Route#] = conf.autobuild(DraftRouteMatcher#)
 		conf[DraftRoute#] = conf.autobuild(DraftRouteMatcher#)
 	}
 
