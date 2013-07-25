@@ -1,11 +1,11 @@
 using afIoc
 using afBedSheet
-using draft::Flash
+using draft::Flash as DraftFlash
 using web::WebReq
 
-internal const class PageHandler {
+internal class PageHandler {
 	
-	@Inject private const Registry registry
+	@Inject private DraftFlash flash
 	
 	internal new make(|This|in) { in(this) }
 	
@@ -20,17 +20,12 @@ internal const class PageHandler {
 	}
 	
 	Text setFlash(Str msg) {
-		flash := (Flash?) webReq.stash["draft.flash"]
 		flash.res["msg"] = msg
 		return Text.fromPlain("OK")
 	}
 
 	Text getFlash() {
-		flash := (Flash?) webReq.stash["draft.flash"]
 		return Text.fromPlain("( " + flash.req["msg"] + " )")
 	}
 
-	private WebReq webReq() {
-		registry.dependencyByType(WebReq#)
-	}	
 }
