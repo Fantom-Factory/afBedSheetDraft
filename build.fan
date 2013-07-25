@@ -12,7 +12,7 @@ class Build : BuildPod {
 					"vcs.uri"		: "https://bitbucket.org/SlimerDude/afbedsheetdraft",
 					"proj.name"		: "afBedSheetDraft",
 					"license.name"	: "BSD 2-Clause License",
-					"repo.private"	: "true",
+					"repo.private"	: "true",	// Eeek!
 
 					"afIoc.module"	: "afBedSheetDraft::DraftModule"
 				]
