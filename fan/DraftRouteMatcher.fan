@@ -2,7 +2,7 @@ using afBedSheet::RouteMatcher
 using afBedSheet::RouteHandler
 using draft::Route as DraftRoute
 
-const class DraftRouteMatcher : RouteMatcher {
+internal const class DraftRouteMatcher : RouteMatcher {
 
 	override RouteHandler? match(Obj objRoute, Uri uri, Str httpMethod) {
 		route := (DraftRoute) objRoute

@@ -45,6 +45,36 @@ static Void contributeRoutes(OrderedConfig conf) {
 
 
 
+Draft Flash [#draftFlash]
+*************************
+The Draft [Flash]`draft::Flash` is contributed as a threaded service and may be accessed as such:
+
+pre>
+  @Inject
+  private Flash flash
+<pre
+
+Note that 'Flash' is not a 'const' class so it may not be injected into 'const' services. Instead create a flash method that
+accesses the [afIoc]`http://repo.status302.com/doc/afIoc/#overview` registry:
+
+pre>
+  using afIoc
+  using draft::Flash as DraftFlash
+
+  class ThreadedHandler {
+    @Inject
+    private Registry registry
+
+    new make(|This|in) { in(this) }
+
+    DraftFlash flash() {
+      registry.dependencyByType(DraftFlash#)
+    }
+  }
+<pre
+
+
+
 Release Notes [#releaseNotes]
 *****************************
 
