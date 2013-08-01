@@ -19,14 +19,14 @@ pre>
 
 ...and thats it!
 
-Because BedSheetDraft defines [pod meta-data]`afIoc::RegistryBuilder` for
+Because BedSheetDraft defines [pod meta-data]`http://repo.status302.com/doc/afIoc/RegistryBuilder.html` for
 [afIoc]`http://repo.status302.com/doc/afIoc/#overview`, no more configuration or setup is required.
 
 
 
 Draft Routing [#draftRouting]
 *****************************
-Draft [Routes]`draft::Route` match request URIs and call request handlers with a single map of arguments. Contribute draft
+Draft [Routes]`draft::Route` match request URIs and calls request handlers with a single map of arguments. Contribute draft
 routes the same way you would with [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` routes:
 
 pre>
@@ -47,7 +47,7 @@ static Void contributeRoutes(OrderedConfig conf) {
 
 Draft Flash [#draftFlash]
 *************************
-The Draft [Flash]`draft::Flash` is contributed as a threaded service and may be accessed as such:
+Draft [Flash]`draft::Flash` is contributed as a threaded service and may be accessed as such:
 
 pre>
   @Inject
