@@ -5,7 +5,7 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedSheetDraft"
 		summary = "A library for integrating draft with afBedSheet"
-		version = Version([1,0,1])
+		version = Version([1,0,3])
 
 		meta	= [	"org.name"		: "Alien-Factory",
 					"org.uri"		: "http://www.alienfactory.co.uk/",
