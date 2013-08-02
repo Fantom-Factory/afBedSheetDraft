@@ -1,14 +1,24 @@
-using web::WebClient
+using afBedSheet
 
-internal class TestDraftRoute : AppTest {
+internal class TestDraftRoute : Test {
+
+	BedClient? client
+	
+	override Void setup() {
+		client = BedServer(T_AppModule#).addModule(DraftModule#).startup.makeClient
+	}
+	
+	override Void teardown() {
+		client.shutdown
+	}
 
 	Void testIndex() {
-		res := getAsStr(`/`)
-		verifyEq(res, "Hi there!")
+		res := client.get(`/`)
+		verifyEq(res.asStr, "Hi there!")
 	}
 
 	Void testEcho() {
-		res := getAsStr(`/echo/Laura/29`)
-		verifyEq(res, "Hi Laura, you are 29 years old!")
+		res := client.get(`/echo/Laura/29`)
+		verifyEq(res.asStr, "Hi Laura, you are 29 years old!")
 	}
 }

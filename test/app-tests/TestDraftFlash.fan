@@ -1,21 +1,29 @@
-using web::WebClient
+using afIoc
+using afBedSheet
 
-internal class TestDraftFlash : AppTest {
+internal class TestDraftFlash2 : Test {
+
+	BedClient? client
+	
+	override Void setup() {
+		client = BedServer(T_AppModule#).addModule(DraftModule#).startup.makeClient
+	}
+	
+	override Void teardown() {
+		client.shutdown
+	}	
 
 	Void testFlash() {
-		verifyEq(getAsStr(`/getFlash`), "( null )")
-		cookie := client.resHeaders["Set-Cookie"].replace(";Path=/", "")
-		
-		client = WebClient()
-		client.reqHeaders["Cookie"] = cookie
-		verifyEq(getAsStr(`/setFlash/Dull`), "OK")
+		res := client.get(`/getFlash`)
+		verifyEq(res.asStr, "( null )")
 
-		client = WebClient()
-		client.reqHeaders["Cookie"] = cookie
-		verifyEq(getAsStr(`/getFlash`), "( Dull )")
+		res = client.get(`/setFlash/Dull`)
+		verifyEq(res.asStr, "OK")
 		
-		client = WebClient()
-		client.reqHeaders["Cookie"] = cookie
-		verifyEq(getAsStr(`/getFlash`), "( null )")
+		res = client.get(`/getFlash`)
+		verifyEq(res.asStr, "( Dull )")
+
+		res = client.get(`/getFlash`)
+		verifyEq(res.asStr, "( null )")
 	}
 }
