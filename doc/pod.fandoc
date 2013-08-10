@@ -78,6 +78,11 @@ pre>
 Release Notes [#releaseNotes]
 *****************************
 
+v1.0.4 [#v1.0.4]
+----------------
+ - Chg: Updated to [afIoc-1.4.x]`http://repo.status302.com/doc/afIoc/#overview`
+ - Chg: Transferred VCS ownership to [AlienFactory]`https://bitbucket.org/AlienFactory`
+
 v1.0.2 [#v1.0.2]
 ----------------
  - Chg: Updated tests to use 'BedServer' and 'BedClient'
