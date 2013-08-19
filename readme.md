@@ -1,7 +1,7 @@
 # afBedSheetDraft
 
-A [Fantom](http://fantom.org/) library for integrating [draft](https://bitbucket.org/afrankvt/draft/) with
-[afBedSheet](http://repo.status302.com/doc/afBedSheet/#overview).
+A [Fantom](http://fantom.org/) library for integrating [draft](https://bitbucket.org/afrankvt/draft/) components with the 
+[afBedSheet](http://repo.status302.com/doc/afBedSheet/#overview) web framework.
 
 
 
