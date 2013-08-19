@@ -4,7 +4,7 @@ class Build : BuildPod {
 
 	new make() {
 		podName = "afBedSheetDraft"
-		summary = "A library for integrating draft with afBedSheet"
+		summary = "A library for integrating 'draft' components with the afBedSheet web framework."
 		version = Version([1,0,5])
 
 		meta	= [	"org.name"		: "Alien-Factory",
@@ -21,7 +21,7 @@ class Build : BuildPod {
 				]
 
 		depends = ["sys 1.0", "draft 1.0", "wisp 1.0", "web 1.0",
-					"afIoc 1.4.0+", "afBedSheet 1.0.8+"]
+					"afIoc 1.4+", "afBedSheet 1.0+"]
 
 		srcDirs = [`test/app-tests/`, `test/app/`, `fan/`]
 		resDirs = [`doc/`]
