@@ -1,45 +1,47 @@
 Overview [#overview]
 ********************
-'afBedSheetDraft' is a library for integrating [draft]`https://bitbucket.org/afrankvt/draft/` components with
-the [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` web framework.
+'BedSheetDraft' is a library for integrating [draft]`https://bitbucket.org/afrankvt/draft/` components with
+the [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` web framework.
 
-With BedSheetDraft you can:
- - Use draft [Routes]`draft::Route`
- - Use draft [Flash]`draft::Flash`
+With 'BedSheetDraft' you can:
+ - Use [draft Routes]`draft::Route`
+ - Use [draft Flash]`draft::Flash`
 
 
+Install [#install]
+******************
+Install 'BedSheetDraft' with the [Fantom Respository Manager]`http://fantom.org/doc/docFanr/Tool.html#install`:
 
-Configuration [#configuration]
-******************************
-Simply add 'afBedSheetDraft' and 'draft' as project dependencies in your 'build.fan'...
+  C:\> fanr install -r http://repo.status302.com/fanr/ afBedSheetDraft
 
-pre>
-  depends = ["sys 1.0", ..., "afBedSheetDraft 1.0+", "draft 1.0"]
-<pre
+Or download the pod from [Status302]`http://repo.status302.com/browse/afBedSheetDraft` and copy it to '%FAN_HOME%/lib/fan/'.
 
-...and thats it!
+To use in a [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` project, add a dependency to the 'build.fan':
 
-Because BedSheetDraft defines [pod meta-data]`http://repo.status302.com/doc/afIoc/RegistryBuilder.html` for
-[afIoc]`http://repo.status302.com/doc/afIoc/#overview`, no more configuration or setup is required.
+  depends = ["sys 1.0", ..., "afBedSheetDraft 1.1+"]
 
 
 
 Draft Routing [#draftRouting]
 *****************************
 Draft [Routes]`draft::Route` match request URIs and calls request handlers with a single map of arguments. Contribute draft
-routes the same way you would with [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` routes:
+routes to the `DraftRoute` service:
 
 pre>
+using afIoc
+using afBedSheetDraft
 using draft::Route as DraftRoute
 
-...
+class AppModule {
 
-@Contribute { serviceType=Routes# }
-static Void contributeRoutes(OrderedConfig conf) {
+  ...
 
-  conf.add(DraftRoute("/", "GET", PageHandler#index))
-  conf.add(DraftRoute("/echo/{name}/{age}", "GET", PageHandler#print))
+  @Contribute { serviceType=DraftRoutes# }
+  static Void contributeRoutes(OrderedConfig conf) {
 
+    conf.add(DraftRoute("/", "GET", PageHandler#index))
+    conf.add(DraftRoute("/echo/{name}/{age}", "GET", PageHandler#print))
+  }
 }
 <pre
 
@@ -78,13 +80,14 @@ pre>
 Release Notes [#releaseNotes]
 *****************************
 
-v1.0.6 [#v1.0.6]
+v1.1.0 [#v1.1.0]
 ----------------
-???
+ - Chg: Updated to use [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` v1.2.
+ - Chg: 'DraftRoute' objects must now be contributed to the `DraftRoutes` service, not the 'BedSheet' 'Routes' service.
 
 v1.0.4 [#v1.0.4]
 ----------------
- - Chg: Updated to [afIoc-1.4.x]`http://repo.status302.com/doc/afIoc/#overview`
+ - Chg: Updated to [afIoc]`http://repo.status302.com/doc/afIoc/#overview` v1.4.
  - Chg: Transferred VCS ownership to [AlienFactory]`https://bitbucket.org/AlienFactory`
 
 v1.0.2 [#v1.0.2]

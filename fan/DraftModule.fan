@@ -1,18 +1,17 @@
-using afIoc::Build
-using afIoc::Contribute
-using afIoc::OrderedConfig
-using afIoc::MappedConfig
-using afIoc::ServiceScope
+using afIoc
 using afBedSheet::HttpPipeline
-using afBedSheet::RouteMatchers
 using draft::Flash as DraftFlash
 using draft::Route as DraftRoute
 using web::WebReq
 
 ** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module that configures 
 ** [draft]`https://bitbucket.org/afrankvt/draft/` with 
-** [afBedSheet]`http://repo.status302.com/doc/afBedSheet/#overview`.
+** [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview`.
 const class DraftModule {
+	
+	static Void bind(ServiceBinder binder) {
+		binder.bindImpl(DraftRoutes#)		
+	}
 
 	@Build { serviceId="DraftFlash"; scope=ServiceScope.perThread }
 	static DraftFlash buildDraftFlash(WebReq webReq) {
@@ -26,12 +25,8 @@ const class DraftModule {
 	
 	@Contribute { serviceType=HttpPipeline# }
 	static Void contributeHttpPipeline(OrderedConfig conf) {
-		conf.addOrdered("DraftFlashFilter", conf.autobuild(DraftFlashFilter#), ["after: BedSheetFilters"])		
-	}
-	
-	@Contribute { serviceType=RouteMatchers# }
-	static Void contributeRouteMatchers(MappedConfig conf) {
-		conf[DraftRoute#] = conf.autobuild(DraftRouteMatcher#)
+		conf.addOrdered("DraftFlashFilter",  conf.autobuild(DraftFlashFilter#),  ["after: BedSheetFilters"])		
+		conf.addOrdered("DraftRoutesFilter", conf.autobuild(DraftRoutesFilter#), ["after: BedSheetFilters", "after: DraftFlashFilter"])		
 	}
 
 }
