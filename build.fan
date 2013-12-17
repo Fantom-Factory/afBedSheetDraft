@@ -5,14 +5,14 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedSheetDraft"
 		summary = "A library for integrating 'draft' components with the afBedSheet web framework."
-		version = Version([1,0,5])
+		version = Version("1.1.0")
 
 		meta	= [	"org.name"		: "Alien-Factory",
 					"org.uri"		: "http://www.alienfactory.co.uk/",
 					"vcs.uri"		: "https://bitbucket.org/AlienFactory/afbedsheetdraft",
 					"proj.name"		: "afBedSheetDraft",
 					"license.name"	: "BSD 2-Clause License",
-					"repo.private"	: "true",
+					"repo.private"	: "false",
 
 					"afIoc.module"	: "afBedSheetDraft::DraftModule"
 				]
