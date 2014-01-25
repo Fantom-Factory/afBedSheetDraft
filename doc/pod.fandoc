@@ -1,7 +1,7 @@
 Overview [#overview]
 ********************
 'BedSheetDraft' is a library for integrating [draft]`https://bitbucket.org/afrankvt/draft/` components with
-the [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` web framework.
+the [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` web framework.
 
 With 'BedSheetDraft' you can:
  - Use [draft Routes]`draft::Route`
@@ -14,9 +14,7 @@ Install 'BedSheetDraft' with the [Fantom Respository Manager]`http://fantom.org/
 
   C:\> fanr install -r http://repo.status302.com/fanr/ afBedSheetDraft
 
-Or download the pod from [Status302]`http://repo.status302.com/browse/afBedSheetDraft` and copy it to '%FAN_HOME%/lib/fan/'.
-
-To use in a [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` project, add a dependency to the 'build.fan':
+To use in a [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` project, add a dependency to 'build.fan':
 
   depends = ["sys 1.0", ..., "afBedSheetDraft 1.1+"]
 
@@ -25,7 +23,7 @@ To use in a [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` proje
 Draft Routing [#draftRouting]
 *****************************
 Draft [Routes]`draft::Route` match request URIs and calls request handlers with a single map of arguments. Contribute draft
-routes to the `DraftRoute` service:
+routes to the `DraftRoutes` service:
 
 pre>
 using afIoc
@@ -57,7 +55,7 @@ pre>
 <pre
 
 Note that 'Flash' is not a 'const' class so it may not be injected into 'const' services. Instead create a flash method that
-accesses the [afIoc]`http://repo.status302.com/doc/afIoc/#overview` registry:
+accesses the [afIoc]`http://www.fantomfactory.org/pods/afIoc` registry:
 
 pre>
   using afIoc
@@ -80,14 +78,19 @@ pre>
 Release Notes [#releaseNotes]
 *****************************
 
+v1.1.2 [#v1.1.2]
+----------------
+ - Chg: Updated to use [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` v1.3.0.
+ - Chg: Updated to use [Ioc]`http://www.fantomfactory.org/pods/afIoc` v1.5.2.
+
 v1.1.0 [#v1.1.0]
 ----------------
- - Chg: Updated to use [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview` v1.2.
+ - Chg: Updated to use [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` v1.2.
  - Chg: 'DraftRoute' objects must now be contributed to the `DraftRoutes` service, not the 'BedSheet' 'Routes' service.
 
 v1.0.4 [#v1.0.4]
 ----------------
- - Chg: Updated to [afIoc]`http://repo.status302.com/doc/afIoc/#overview` v1.4.
+ - Chg: Updated to [afIoc]`http://www.fantomfactory.org/pods/afBedSheet` v1.4.
  - Chg: Transferred VCS ownership to [AlienFactory]`https://bitbucket.org/AlienFactory`
 
 v1.0.2 [#v1.0.2]

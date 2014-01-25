@@ -1,5 +1,4 @@
-using afIoc
-using afBedSheet
+using afBounce
 
 internal class TestDraftFlash2 : Test {
 

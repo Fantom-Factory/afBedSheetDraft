@@ -1,5 +1,5 @@
 using afIoc
-using afBedSheet::HttpPipeline
+using afBedSheet::MiddlewarePipeline
 using draft::Flash as DraftFlash
 using draft::Route as DraftRoute
 using web::WebReq
@@ -10,7 +10,7 @@ using web::WebReq
 const class DraftModule {
 	
 	static Void bind(ServiceBinder binder) {
-		binder.bindImpl(DraftRoutes#)		
+		binder.bind(DraftRoutes#)
 	}
 
 	@Build { serviceId="DraftFlash"; scope=ServiceScope.perThread }
@@ -23,10 +23,10 @@ const class DraftModule {
 		return flash
 	}
 	
-	@Contribute { serviceType=HttpPipeline# }
-	static Void contributeHttpPipeline(OrderedConfig conf) {
-		conf.addOrdered("DraftFlashFilter",  conf.autobuild(DraftFlashFilter#),  ["after: BedSheetFilters"])		
-		conf.addOrdered("DraftRoutesFilter", conf.autobuild(DraftRoutesFilter#), ["after: BedSheetFilters", "after: DraftFlashFilter"])		
+	@Contribute { serviceType=MiddlewarePipeline# }
+	static Void contributeMiddlewarePipeline(OrderedConfig config) {
+		config.addOrdered("DraftFlash",  config.autobuild(DraftFlashMiddleware#))
+		config.addOrdered("DraftRoutes", config.autobuild(DraftRoutesMiddleware#), ["after: DraftFlash"])		
 	}
 
 }
