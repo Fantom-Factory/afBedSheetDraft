@@ -5,13 +5,13 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedSheetDraft"
 		summary = "A library for integrating 'draft' components with the BedSheet web framework"
-		version = Version("1.1.4")
+		version = Version("1.1.5")
 
 		meta = [
 			"proj.name"		: "afBedSheetDraft",
 			"afIoc.module"	: "afBedSheetDraft::DraftModule",
 			"tags"			: "web",
-			"repo.private"	: "false"
+			"repo.private"	: "true"
 		]
 
 		index = [	
