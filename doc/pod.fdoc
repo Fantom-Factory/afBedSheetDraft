@@ -41,7 +41,7 @@ class AppModule {
   ...
 
   @Contribute { serviceType=DraftRoutes# }
-  static Void contributeRoutes(OrderedConfig conf) {
+  static Void contributeRoutes(Configuration conf) {
 
     conf.add(DraftRoute("/", "GET", PageHandler#index))
     conf.add(DraftRoute("/echo/{name}/{age}", "GET", PageHandler#print))
