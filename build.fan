@@ -4,19 +4,14 @@ class Build : BuildPod {
 
 	new make() {
 		podName = "afBedSheetDraft"
-		summary = "A library for integrating 'draft' components with the afBedSheet web framework"
-		version = Version("1.1.3")
+		summary = "A library for integrating 'draft' components with the BedSheet web framework"
+		version = Version("1.1.4")
 
 		meta = [
-			"org.name"		: "Alien-Factory",
-			"org.uri"		: "http://www.alienfactory.co.uk/",
 			"proj.name"		: "afBedSheetDraft",
-			"proj.uri"		: "http://repo.status302.com/doc/afBedSheetDraft/",
-			"vcs.uri"		: "https://bitbucket.org/AlienFactory/afbedsheetdraft",
-			"license.name"	: "BSD 2-Clause License",
-			"repo.private"	: "true",
-
-			"afIoc.module"	: "afBedSheetDraft::DraftModule"
+			"afIoc.module"	: "afBedSheetDraft::DraftModule",
+			"tags"			: "web",
+			"repo.private"	: "false"
 		]
 
 		index = [	
@@ -27,18 +22,24 @@ class Build : BuildPod {
 			"sys 1.0", 
 			"wisp 1.0", 
 			"web 1.0",
-			"afIoc 1.5.2+", 
-			"afBedSheet 1.3.0+",
+
+			// ---- Core ------------------------
+			"afIoc 1.7.2+", 
+			"afBedSheet 1.3.10+",
 			"draft 1.0",
 			
-			// for testing
+			// ---- Test ------------------------
 			"afBounce 0+"
 		]
 
 		srcDirs = [`test/app-tests/`, `test/app/`, `fan/`]
 		resDirs = [`doc/`]
-
-		docApi = true
-		docSrc = true
+	}
+	
+	override Void compile() {
+		// remove test pods from final build
+		testPods := "afBounce".split
+		depends = depends.exclude { testPods.contains(it.split.first) }
+		super.compile
 	}
 }
