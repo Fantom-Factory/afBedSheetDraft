@@ -9,7 +9,7 @@ internal const class DraftRoutesMiddleware : Middleware {
 	new make(|This|in) { in(this) }
 
 	override Bool service(MiddlewarePipeline pipeline) {
-		handled := routes.processRequest(httpRequest.modRel, httpRequest.httpMethod)
+		handled := routes.processRequest(httpRequest.url, httpRequest.httpMethod)
 		return handled ? true : pipeline.service
 	}	
 }

@@ -24,9 +24,9 @@ const class DraftModule {
 	}
 	
 	@Contribute { serviceType=MiddlewarePipeline# }
-	static Void contributeMiddlewarePipeline(OrderedConfig config) {
-		config.addOrdered("DraftFlash",  config.autobuild(DraftFlashMiddleware#))
-		config.addOrdered("DraftRoutes", config.autobuild(DraftRoutesMiddleware#), ["after: DraftFlash"])		
+	static Void contributeMiddlewarePipeline(Configuration config) {
+		config.set("DraftFlash",  config.autobuild(DraftFlashMiddleware#))
+		config.set("DraftRoutes", config.autobuild(DraftRoutesMiddleware#)).after("DraftFlash")		
 	}
 
 }
