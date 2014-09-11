@@ -61,7 +61,7 @@ pre>
 <pre
 
 Note that 'Flash' is not a 'const' class so it may not be injected into 'const' services. Instead create a flash method that
-accesses the [afIoc]`http://www.fantomfactory.org/pods/afIoc` registry:
+accesses the [IoC]`pod:afIoc` registry:
 
 pre>
   using afIoc
@@ -83,6 +83,10 @@ pre>
 
 Release Notes [#releaseNotes]
 *****************************
+v1.1.6 [#v1.1.6]
+----------------
+ - Chg: Updated to use [IoC 2.0.0]`pod:afIoc`.
+
 v1.1.4 [#v1.1.4]
 ----------------
  - Chg: Updated to use [IoC 1.7.2]`pod:afIoc` and [BedSheet 1.3.12]`pod:afBedSheet`.
