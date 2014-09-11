@@ -5,10 +5,10 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedSheetDraft"
 		summary = "A library for integrating 'draft' components with the BedSheet web framework"
-		version = Version("1.1.5")
+		version = Version("1.1.6")
 
 		meta = [
-			"proj.name"		: "afBedSheetDraft",
+			"proj.name"		: "BedSheet Draft",
 			"afIoc.module"	: "afBedSheetDraft::DraftModule",
 			"tags"			: "web",
 			"repo.private"	: "true"
@@ -24,12 +24,12 @@ class Build : BuildPod {
 			"web 1.0",
 
 			// ---- Core ------------------------
-			"afIoc 1.7.2+", 
-			"afBedSheet 1.3.10+",
+			"afIoc 2.0.0+", 
+			"afBedSheet 1.3.16+",
 			"draft 1.0",
 			
 			// ---- Test ------------------------
-			"afBounce 1.0.8+"
+			"afBounce 1.0.14+"
 		]
 
 		srcDirs = [`test/app-tests/`, `test/app/`, `fan/`]

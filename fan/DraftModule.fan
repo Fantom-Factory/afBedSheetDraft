@@ -9,8 +9,8 @@ using web::WebReq
 ** [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview`.
 const class DraftModule {
 	
-	static Void bind(ServiceBinder binder) {
-		binder.bind(DraftRoutes#)
+	static Void defineServices(ServiceDefinitions defs) {
+		defs.add(DraftRoutes#)
 	}
 
 	@Build { serviceId="DraftFlash"; scope=ServiceScope.perThread }
