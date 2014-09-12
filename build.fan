@@ -11,7 +11,7 @@ class Build : BuildPod {
 			"proj.name"		: "BedSheet Draft",
 			"afIoc.module"	: "afBedSheetDraft::DraftModule",
 			"tags"			: "web",
-			"repo.private"	: "true"
+			"repo.private"	: "false"
 		]
 
 		index = [	

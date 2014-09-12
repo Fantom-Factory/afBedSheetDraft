@@ -9,7 +9,7 @@ With `BedSheetDraft` you can:
 
 ## Install 
 
-Install `afBedSheetDraft` with the Fantom Repository Manager ( [fanr](http://fantom.org/doc/docFanr/Tool.html#install) ):
+Install `BedSheet Draft` with the Fantom Repository Manager ( [fanr](http://fantom.org/doc/docFanr/Tool.html#install) ):
 
     C:\> fanr install -r http://repo.status302.com/fanr/ afBedSheetDraft
 
@@ -52,7 +52,7 @@ Draft [Flash](http://repo.status302.com/doc/draft/Flash.html) is contributed as 
 private Flash flash
 ```
 
-Note that `Flash` is not a `const` class so it may not be injected into `const` services. Instead create a flash method that accesses the [afIoc](http://www.fantomfactory.org/pods/afIoc) registry:
+Note that `Flash` is not a `const` class so it may not be injected into `const` services. Instead create a flash method that accesses the [IoC](http://www.fantomfactory.org/pods/afIoc) registry:
 
 ```
 using afIoc
