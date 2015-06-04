@@ -1,0 +1,83 @@
+Overview
+********
+'BedSheetDraft' is a library for integrating [draft]`https://bitbucket.org/afrankvt/draft/` components with
+the [BedSheet]`pod:afBedSheet` web framework.
+
+With 'BedSheetDraft' you can:
+ - Use [draft Routes]`draft::Route`
+ - Use [draft Flash]`draft::Flash`
+
+
+
+Draft Routing
+*************
+Draft [Routes]`draft::Route` match request URIs and calls request handlers with a single map of arguments. Contribute draft routes to the `DraftRoutes` service:
+
+pre>
+syntax: fantom
+
+using afIoc
+using afBedSheetDraft
+using draft::Route as DraftRoute
+
+class AppModule {
+
+  ...
+
+  @Contribute { serviceType=DraftRoutes# }
+  static Void contributeRoutes(Configuration conf) {
+
+    conf.add(DraftRoute("/", "GET", PageHandler#index))
+    conf.add(DraftRoute("/echo/{name}/{age}", "GET", PageHandler#print))
+  }
+}
+<pre
+
+
+
+Draft Flash
+***********
+Draft [Flash]`draft::Flash` is contributed as a threaded service and may be accessed as such:
+
+pre>
+  syntax: fantom
+  @Inject
+  private Flash flash
+<pre
+
+Note that 'Flash' is not a 'const' class so it may not be injected into 'const' services. Instead create a flash method that accesses the [IoC]`pod:afIoc` registry:
+
+pre>
+  syntax: fantom
+
+  using afIoc
+  using draft::Flash as DraftFlash
+
+  class ThreadedHandler {
+    @Inject
+    private Registry registry
+
+    new make(|This|in) { in(this) }
+
+    DraftFlash flash() {
+      registry.dependencyByType(DraftFlash#)
+    }
+  }
+<pre
+
+Or you can inject a [Lazy Func]`fandoc:/afIoc/doc/pod#lazyFunctions` which performs the same job:
+
+pre>
+  syntax: fantom
+
+  using afIoc
+  using draft::Flash as DraftFlash
+
+  class ThreadedHandler {
+    @Inject
+    private |->DraftFlash| flash
+
+    new make(|This|in) { in(this) }
+  }
+<pre
+

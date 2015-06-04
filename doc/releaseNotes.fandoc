@@ -1,0 +1,37 @@
+Versions
+********
+
+v1.1.8
+------
+ - Chg: Updated for compatibility with [BedSheet 1.4]`pod:afBedSheet`.
+
+v1.1.6
+------
+ - Chg: Updated to use [IoC 2.0.0]`pod:afIoc`.
+
+v1.1.4
+------
+ - Chg: Updated to use [IoC 1.7.2]`pod:afIoc` and [BedSheet 1.3.12]`pod:afBedSheet`.
+
+v1.1.2
+------
+ - Chg: Updated to use [IoC 1.5.2]`pod:afIoc` and [BedSheet 1.3.0]`pod:afBedSheet`.
+
+v1.1.0
+------
+ - Chg: Updated to use [BedSheet 1.2]`pod:afBedSheet`.
+ - Chg: 'DraftRoute' objects must now be contributed to the `DraftRoutes` service, not the BedSheet 'Routes' service.
+
+v1.0.4
+------
+ - Chg: Updated to [IoC 1.4.0]`pod:afBedSheet`.
+ - Chg: Transferred VCS ownership to [Alien-Factory]`https://bitbucket.org/AlienFactory`
+
+v1.0.2
+------
+ - Chg: Updated tests to use 'BedServer' and 'BedClient'
+
+v1.0.0
+------
+ - New: Initial release
+

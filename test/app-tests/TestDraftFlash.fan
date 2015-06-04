@@ -14,15 +14,15 @@ internal class TestDraftFlash2 : Test {
 
 	Void testFlash() {
 		res := client.get(`/getFlash`)
-		verifyEq(res.asStr, "( null )")
+		verifyEq(res.body.str, "( null )")
 
 		res = client.get(`/setFlash/Dull`)
-		verifyEq(res.asStr, "OK")
+		verifyEq(res.body.str, "OK")
 		
 		res = client.get(`/getFlash`)
-		verifyEq(res.asStr, "( Dull )")
+		verifyEq(res.body.str, "( Dull )")
 
 		res = client.get(`/getFlash`)
-		verifyEq(res.asStr, "( null )")
+		verifyEq(res.body.str, "( null )")
 	}
 }

@@ -14,11 +14,11 @@ internal class TestDraftRoute : Test {
 
 	Void testIndex() {
 		res := client.get(`/`)
-		verifyEq(res.asStr, "Hi there!")
+		verifyEq(res.body.str, "Hi there!")
 	}
 
 	Void testEcho() {
 		res := client.get(`/echo/Laura/29`)
-		verifyEq(res.asStr, "Hi Laura, you are 29 years old!")
+		verifyEq(res.body.str, "Hi Laura, you are 29 years old!")
 	}
 }
