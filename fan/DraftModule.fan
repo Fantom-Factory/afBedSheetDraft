@@ -4,9 +4,7 @@ using draft::Flash as DraftFlash
 using draft::Route as DraftRoute
 using web::WebReq
 
-** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module that configures 
-** [draft]`https://bitbucket.org/afrankvt/draft/` with 
-** [BedSheet]`http://repo.status302.com/doc/afBedSheet/#overview`.
+** The [IoC]`pod:afIoc` module that configures [draft]`pod:draft` with [BedSheet]`pod:afBedSheet`.
 const class DraftModule {
 	
 	static Void defineServices(ServiceDefinitions defs) {
