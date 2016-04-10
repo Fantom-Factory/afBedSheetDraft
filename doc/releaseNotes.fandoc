@@ -1,6 +1,10 @@
 Versions
 ********
 
+v1.1.10
+------
+ - Chg: Updated for compatibility with [BedSheet 1.5]`pod:afBedSheet`.
+
 v1.1.8
 ------
  - Chg: Updated for compatibility with [BedSheet 1.4]`pod:afBedSheet`.

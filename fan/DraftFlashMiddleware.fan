@@ -1,5 +1,5 @@
 using afIoc::Inject
-using afIoc::Registry
+using afIoc::Scope
 using afBedSheet::Middleware
 using afBedSheet::MiddlewarePipeline
 using draft::Flash as DraftFlash
@@ -8,7 +8,7 @@ using web::WebReq
 ** A HTTP filter that ensures draft 'Flash' is saved to your session at the end of a request.
 internal const class DraftFlashMiddleware : Middleware {
 
-	@Inject private const Registry 		registry
+	@Inject private const |->Scope| scope
 
 	internal new make(|This|in) { in(this) }
 
@@ -22,10 +22,10 @@ internal const class DraftFlashMiddleware : Middleware {
 	}
 
 	private DraftFlash draftFlash() {
-		registry.dependencyByType(DraftFlash#)
+		scope().serviceByType(DraftFlash#)
 	}
 
 	private WebReq webReq() {
-		registry.dependencyByType(WebReq#)
+		scope().serviceByType(WebReq#)
 	}
 }
