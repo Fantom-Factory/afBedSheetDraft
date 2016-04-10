@@ -4,15 +4,15 @@ using draft::Flash as DraftFlash
 using draft::Route as DraftRoute
 using web::WebReq
 
-** The [IoC]`pod:afIoc` module that configures [draft]`pod:draft` with [BedSheet]`pod:afBedSheet`.
+** The IoC module that configures draft with BedSheet.
 const class DraftModule {
 	
-	static Void defineServices(ServiceDefinitions defs) {
-		defs.add(DraftRoutes#)
+	Void defineServices(RegistryBuilder defs) {
+		defs.addService(DraftRoutes#)
 	}
 
-	@Build { serviceId="DraftFlash"; scope=ServiceScope.perThread }
-	static DraftFlash buildDraftFlash(WebReq webReq) {
+	@Build { serviceId="DraftFlash" }
+	DraftFlash buildDraftFlash(WebReq webReq) {
 		flash := (DraftFlash?) webReq.stash["draft.flash"]
 		if (flash == null) {
 			map := webReq.session["draft.flash"] ?: Str:Str[:]
@@ -22,9 +22,8 @@ const class DraftModule {
 	}
 	
 	@Contribute { serviceType=MiddlewarePipeline# }
-	static Void contributeMiddlewarePipeline(Configuration config) {
-		config.set("DraftFlash",  config.autobuild(DraftFlashMiddleware#))
-		config.set("DraftRoutes", config.autobuild(DraftRoutesMiddleware#)).after("DraftFlash")		
+	Void contributeMiddlewarePipeline(Configuration config) {
+		config.set("DraftFlash",  config.build(DraftFlashMiddleware#)).before("afBedSheet.routes")
+//		config.set("DraftRoutes", config.build(DraftRoutesMiddleware#)).after("DraftFlash")		
 	}
-
 }

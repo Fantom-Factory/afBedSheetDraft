@@ -4,14 +4,14 @@ Overview
 the [BedSheet]`pod:afBedSheet` web framework.
 
 With 'BedSheetDraft' you can:
- - Use [draft Routes]`draft::Route`
- - Use [draft Flash]`draft::Flash`
+ - Use [draft Routes]`http://repo.status302.com/doc/draft/Route.html`
+ - Use [draft Flash]`http://repo.status302.com/doc/draft/Flash.html`
 
 
 
 Draft Routing
 *************
-Draft [Routes]`draft::Route` match request URIs and calls request handlers with a single map of arguments. Contribute draft routes to the `DraftRoutes` service:
+Draft [Routes]`http://repo.status302.com/doc/draft/Route.html` match request URIs and calls request handlers with a single map of arguments. Contribute draft routes to the `DraftRoutes` service:
 
 pre>
 syntax: fantom
@@ -37,7 +37,7 @@ class AppModule {
 
 Draft Flash
 ***********
-Draft [Flash]`draft::Flash` is contributed as a threaded service and may be accessed as such:
+Draft [Flash]`http://repo.status302.com/doc/draft/Flash.html` is contributed as a threaded service and may be accessed as such:
 
 pre>
   syntax: fantom

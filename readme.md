@@ -1,7 +1,7 @@
-#BedSheet Draft v1.1.8
+#BedSheet Draft v1.1.10
 ---
 [![Written in: Fantom](http://img.shields.io/badge/written%20in-Fantom-lightgray.svg)](http://fantom.org/)
-[![pod: v1.1.8](http://img.shields.io/badge/pod-v1.1.8-yellow.svg)](http://www.fantomfactory.org/pods/afBedSheetDraft)
+[![pod: v1.1.10](http://img.shields.io/badge/pod-v1.1.10-yellow.svg)](http://www.fantomfactory.org/pods/afBedSheetDraft)
 ![Licence: MIT](http://img.shields.io/badge/licence-MIT-blue.svg)
 
 ## Overview
@@ -17,7 +17,7 @@ With `BedSheetDraft` you can:
 
 Install `BedSheet Draft` with the Fantom Repository Manager ( [fanr](http://fantom.org/doc/docFanr/Tool.html#install) ):
 
-    C:\> fanr install -r http://repo.status302.com/fanr/ afBedSheetDraft
+    C:\> fanr install -r http://pods.fantomfactory.org/fanr/ afBedSheetDraft
 
 To use in a [Fantom](http://fantom.org/) project, add a dependency to `build.fan`:
 
