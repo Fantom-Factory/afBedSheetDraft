@@ -10,8 +10,8 @@
 
 With `BedSheetDraft` you can:
 
-- Use [draft Routes](http://pods.fantomfactory.org/pods/draft/api/Route)
-- Use [draft Flash](http://pods.fantomfactory.org/pods/draft/api/Flash)
+- Use [draft Routes](http://repo.status302.com/doc/draft/Route.html)
+- Use [draft Flash](http://repo.status302.com/doc/draft/Flash.html)
 
 ## Install
 
@@ -29,7 +29,7 @@ Full API & fandocs are available on the [Fantom Pod Repository](http://pods.fant
 
 ## Draft Routing
 
-Draft [Routes](http://pods.fantomfactory.org/pods/draft/api/Route) match request URIs and calls request handlers with a single map of arguments. Contribute draft routes to the [DraftRoutes](http://pods.fantomfactory.org/pods/afBedSheetDraft/api/DraftRoutes) service:
+Draft [Routes](http://repo.status302.com/doc/draft/Route.html) match request URIs and calls request handlers with a single map of arguments. Contribute draft routes to the [DraftRoutes](http://pods.fantomfactory.org/pods/afBedSheetDraft/api/DraftRoutes) service:
 
 ```
 using afIoc
@@ -51,7 +51,7 @@ class AppModule {
 
 ## Draft Flash
 
-Draft [Flash](http://pods.fantomfactory.org/pods/draft/api/Flash) is contributed as a threaded service and may be accessed as such:
+Draft [Flash](http://repo.status302.com/doc/draft/Flash.html) is contributed as a threaded service and may be accessed as such:
 
 ```
 @Inject
